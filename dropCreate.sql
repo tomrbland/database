@@ -16,12 +16,27 @@ CREATE TABLE Forum (
    name VARCHAR(250) UNIQUE
 );
 
-INSERT INTO Forum (name) VALUES ('Test1');
-INSERT INTO Forum (name) VALUES ('Test2');
-INSERT INTO Forum (name) VALUES ('Test3');
+INSERT INTO Forum (name) VALUES ('Computer Science');
+INSERT INTO Forum (name) VALUES ('Politics');
+INSERT INTO Forum (name) VALUES ('Literature');
+
+CREATE TABLE Topic (
+   id INTEGER PRIMARY KEY,
+   forumid INTEGER NOT NULL,
+   title VARCHAR(250) NOT NULL,
+   CONSTRAINT forumid FOREIGN KEY (forumid) REFERENCES Forum (id)
+);
+
+INSERT INTO Topic (forumid, title) VALUES (1, 'Database design');
+INSERT INTO Topic (forumid, title) VALUES (1, 'Algorithms');
+INSERT INTO Topic (forumid, title) VALUES (2, 'The pros and cons of EU membership');
+INSERT INTO Topic (forumid, title) VALUES (2, 'The US elections');
+INSERT INTO Topic (forumid, title) VALUES (3, 'What is your favourite book?');
+INSERT INTO Topic (forumid, title) VALUES (3, 'The greatest novel of the 20th Century?');
 
 .header on
 .mode column
 
 SELECT * FROM Person LIMIT 5;
 SELECT * FROM Forum LIMIT 5;
+SELECT * FROM Topic LIMIT 6;
