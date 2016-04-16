@@ -48,6 +48,7 @@ CREATE TABLE Post (
 );
 
 INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, '1st NF is...', '2016-04-16 12:45:10.000');
+INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, '2nd NF is...', '2016-04-16 12:54:12.028');
 
 .header on
 .mode column
