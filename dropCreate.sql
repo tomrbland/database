@@ -42,13 +42,13 @@ CREATE TABLE Post (
    authorid INTEGER NOT NULL,
    topicid INTEGER NOT NULL,
    text TEXT,
-   date TEXT NOT NULL,
+   date INTEGER NOT NULL,
    CONSTRAINT topic_fk FOREIGN KEY (topicid) REFERENCES Topic (id),
    CONSTRAINT author_fk FOREIGN KEY (authorid) REFERENCES Person (id)
 );
 
-INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, '1st NF is...', '2016-04-16 12:45:10.000');
-INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, '2nd NF is...', '2016-04-16 12:54:12.028');
+INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, '1st NF is...', 124510);
+INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, '2nd NF is...', 125412);
 
 .header on
 .mode column
