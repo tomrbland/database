@@ -1,4 +1,7 @@
 DROP TABLE IF EXISTS Person;
+DROP TABLE IF EXISTS Forum;
+DROP TABLE IF EXISTS Topic;
+DROP TABLE IF EXISTS Post;
 
 CREATE TABLE Person (
 id INTEGER PRIMARY KEY,
@@ -24,19 +27,32 @@ CREATE TABLE Topic (
    id INTEGER PRIMARY KEY,
    forumid INTEGER NOT NULL,
    title VARCHAR(250) NOT NULL,
-   CONSTRAINT forumid FOREIGN KEY (forumid) REFERENCES Forum (id)
+   CONSTRAINT forumid_fk FOREIGN KEY (forumid) REFERENCES Forum (id)
 );
 
 INSERT INTO Topic (forumid, title) VALUES (1, 'Database design');
 INSERT INTO Topic (forumid, title) VALUES (1, 'Algorithms');
-INSERT INTO Topic (forumid, title) VALUES (2, 'The pros and cons of EU membership');
+INSERT INTO Topic (forumid, title) VALUES (2, 'The EU');
 INSERT INTO Topic (forumid, title) VALUES (2, 'The US elections');
 INSERT INTO Topic (forumid, title) VALUES (3, 'What is your favourite book?');
 INSERT INTO Topic (forumid, title) VALUES (3, 'The greatest novel of the 20th Century?');
 
+CREATE TABLE Post (
+   id INTEGER PRIMARY KEY,
+   authorid INTEGER NOT NULL,
+   topicid INTEGER NOT NULL,
+   text TEXT,
+   date TEXT NOT NULL,
+   CONSTRAINT topic_fk FOREIGN KEY (topicid) REFERENCES Topic (id),
+   CONSTRAINT author_fk FOREIGN KEY (authorid) REFERENCES Person (id)
+);
+
+INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, '1st NF is...', '2016-04-16 12:45:10.000');
+
 .header on
 .mode column
 
-SELECT * FROM Person LIMIT 5;
-SELECT * FROM Forum LIMIT 5;
+SELECT * FROM Person LIMIT 6;
+SELECT * FROM Forum LIMIT 6;
 SELECT * FROM Topic LIMIT 6;
+SELECT * FROM Post LIMIT 6;
