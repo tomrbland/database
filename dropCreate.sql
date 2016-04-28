@@ -45,6 +45,9 @@ CREATE TABLE Topic_Likers (
    CONSTRAINT person_fk FOREIGN KEY(personid) REFERENCES Person (id)
 );
 
+INSERT INTO Topic_Likers (topicid, personid) VALUES (1, 3);
+INSERT INTO Topic_Likers (topicid, personid) VALUES (1, 4);
+
 CREATE TABLE Post (
    id INTEGER PRIMARY KEY,
    authorid INTEGER NOT NULL,
@@ -64,4 +67,5 @@ INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, '2nd NF is...', 1
 SELECT * FROM Person LIMIT 6;
 SELECT * FROM Forum LIMIT 6;
 SELECT * FROM Topic LIMIT 6;
+SELECT * FROM Topic_Likers LIMIT 6;
 SELECT * FROM Post LIMIT 6;
