@@ -18,12 +18,12 @@ INSERT INTO Person (name, username, stuId) VALUES ('Tom', 'tb15269', '123452');
 
 CREATE TABLE Forum (
    id INTEGER PRIMARY KEY,
-   name VARCHAR(250) UNIQUE
+   title VARCHAR(250) UNIQUE
 );
 
-INSERT INTO Forum (name) VALUES ('Computer Science');
-INSERT INTO Forum (name) VALUES ('Politics');
-INSERT INTO Forum (name) VALUES ('Literature');
+INSERT INTO Forum (title) VALUES ('Computer Science');
+INSERT INTO Forum (title) VALUES ('Politics');
+INSERT INTO Forum (title) VALUES ('Literature');
 
 CREATE TABLE Topic (
    id INTEGER PRIMARY KEY,
