@@ -65,9 +65,11 @@ CREATE TABLE Post (
    CONSTRAINT author_fk FOREIGN KEY (authorid) REFERENCES Person (id)
 );
 
-INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, '1st NF is...', 124510);
-INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, '2nd NF is...', 125412);
-INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, '3rd NF is...', 125414);
+INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, '1st NF is...', 124510); /* Alex has written a post about DBs */
+INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, '2nd NF is...', 125412); /* Alex has written a post about DBs */
+INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, '3rd NF is...', 125414); /* Alex has written a post about DBs */
+INSERT INTO Post (authorid, topicid, text, date) VALUES (2, 2, 'Quicksort is the shit!', 124510); /* Joseph has written a post about algorithms */
+
 
 CREATE TABLE Post_Likers (
    postid INTEGER NOT NULL,
