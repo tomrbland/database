@@ -37,6 +37,14 @@ INSERT INTO Topic (forumid, title) VALUES (2, 'The US elections');
 INSERT INTO Topic (forumid, title) VALUES (3, 'What is your favourite book?');
 INSERT INTO Topic (forumid, title) VALUES (3, 'The greatest novel of the 20th Century?');
 
+CREATE TABLE Topic_Likers (
+   topicid INTEGER NOT NULL,
+   personid INTEGER NOT NULL,
+   PRIMARY KEY(topicid, personid),
+   CONSTRAINT topic_fk FOREIGN KEY (topicid) REFERENCES Topic (id),
+   CONSTRAINT person_fk FOREIGN KEY(personid) REFERENCES Person (id)
+);
+
 CREATE TABLE Post (
    id INTEGER PRIMARY KEY,
    authorid INTEGER NOT NULL,
