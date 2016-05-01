@@ -65,10 +65,14 @@ CREATE TABLE Post (
    CONSTRAINT author_fk FOREIGN KEY (authorid) REFERENCES Person (id)
 );
 
+INSERT INTO Post (authorid, topicid, text, date) VALUES (2, 2, 'Quicksort is amazing!', 100000); /* Joseph has written a post about algorithms */
 INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, '1st NF is...', 100001); /* Alex has written a post about DBs */
 INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, '2nd NF is...', 100002); /* Alex has written a post about DBs */
-INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, '3rd NF is...', 100004); /* Alex has written a post about DBs */
-INSERT INTO Post (authorid, topicid, text, date) VALUES (2, 2, 'Quicksort is amazing!', 100003); /* Joseph has written a post about algorithms */
+INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, '3rd NF is...', 100003); /* Alex has written a post about DBs */
+INSERT INTO Post (authorid, topicid, text, date) VALUES (3, 3, 'Pros and cons of staying in the EU?', 100005); /* Tom has written a post about the EU */
+INSERT INTO Post (authorid, topicid, text, date) VALUES (3, 4, 'Do people think Clinton will win?', 100004); /* Tom has written a post about the US elections */
+INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 5, 'Using SQLite by Jay A. Kreibich?', 100006); /* Alex has written a post about favourite books */
+INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 6, 'Blood Meridian by Cormac McCarthy', 100007); /* Alex has written a post about favourite books */
 
 CREATE TABLE Post_Likers (
    postid INTEGER NOT NULL,
@@ -89,5 +93,5 @@ SELECT * FROM Person LIMIT 6;
 SELECT * FROM Forum LIMIT 6;
 SELECT * FROM Topic LIMIT 6;
 SELECT * FROM Topic_Likers LIMIT 6;
-SELECT * FROM Post LIMIT 6;
+SELECT * FROM Post LIMIT 8;
 SELECT * FROM Post_Likers LIMIT 6;
