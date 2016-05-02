@@ -73,6 +73,8 @@ INSERT INTO Post (authorid, topicid, text, date) VALUES (3, 3, 'Pros and cons of
 INSERT INTO Post (authorid, topicid, text, date) VALUES (3, 4, 'Do people think Clinton will win?', 100004); /* Tom has written a post about the US elections */
 INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 5, 'Using SQLite by Jay A. Kreibich?', 100006); /* Alex has written a post about favourite books */
 INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 6, 'Blood Meridian by Cormac McCarthy', 100007); /* Alex has written a post about favourite books */
+INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, 'CWK3 answers?', 100008); /* Alex has written a post about DBs */
+
 
 CREATE TABLE Post_Likers (
    postid INTEGER NOT NULL,
@@ -93,5 +95,5 @@ SELECT * FROM Person LIMIT 6;
 SELECT * FROM Forum LIMIT 6;
 SELECT * FROM Topic LIMIT 6;
 SELECT * FROM Topic_Likers LIMIT 6;
-SELECT * FROM Post LIMIT 8;
+SELECT * FROM Post/* LIMIT 8 */;
 SELECT * FROM Post_Likers LIMIT 6;
