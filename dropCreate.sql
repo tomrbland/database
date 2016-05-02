@@ -74,7 +74,7 @@ INSERT INTO Post (authorid, topicid, text, date) VALUES (3, 4, 'Do people think 
 INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 5, 'Using SQLite by Jay A. Kreibich?', 100006); /* Alex has written a post about favourite books */
 INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 6, 'Blood Meridian by Cormac McCarthy', 100007); /* Alex has written a post about favourite books */
 INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, 'CWK3 answers?', 100008); /* Alex has written a post about DBs */
-
+INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 2, 'Need help with time complexity analysis.', 100009); /* Alex has written a post about Algorithms */
 
 CREATE TABLE Post_Likers (
    postid INTEGER NOT NULL,
