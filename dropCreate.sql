@@ -61,8 +61,8 @@ CREATE TABLE Post (
    topicid INTEGER NOT NULL,
    text TEXT,
    date INTEGER NOT NULL,
-   CONSTRAINT topic_fk FOREIGN KEY (topicid) REFERENCES Topic (id),
-   CONSTRAINT author_fk FOREIGN KEY (authorid) REFERENCES Person (id)
+   CONSTRAINT authorid_fk FOREIGN KEY (authorid) REFERENCES Person (id),
+   CONSTRAINT topicid_fk FOREIGN KEY (topicid) REFERENCES Topic (id)
 );
 
 INSERT INTO Post (authorid, topicid, text, date) VALUES (2, 2, 'Quicksort is amazing!', 100000); /* Joseph has written a post about algorithms */
