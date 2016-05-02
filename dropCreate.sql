@@ -88,9 +88,6 @@ INSERT INTO Post_Likers (postid, personid) VALUES (1, 1); /* Alex likes Post 1 -
 INSERT INTO Post_Likers (postid, personid) VALUES (2, 2); /* Joseph likes Post 2 - 2nd NF... */
 INSERT INTO Post_Likers (postid, personid) VALUES (3, 3); /* Tom likes Post 3 - 3rd NF... */
 
-.header on
-.mode column
-
 SELECT * FROM Person LIMIT 6;
 SELECT * FROM Forum LIMIT 6;
 SELECT * FROM Topic LIMIT 6;
