@@ -60,21 +60,21 @@ CREATE TABLE Post (
    authorid INTEGER NOT NULL,
    topicid INTEGER NOT NULL,
    text TEXT,
-   date INTEGER NOT NULL,
+   date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
    CONSTRAINT authorid_fk FOREIGN KEY (authorid) REFERENCES Person (id),
    CONSTRAINT topicid_fk FOREIGN KEY (topicid) REFERENCES Topic (id)
 );
 
-INSERT INTO Post (authorid, topicid, text, date) VALUES (2, 2, 'Quicksort is amazing!', 100000); /* Joseph has written a post about algorithms */
-INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, '1st NF is...', 100001); /* Alex has written a post about DBs */
-INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, '2nd NF is...', 100002); /* Alex has written a post about DBs */
-INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, '3rd NF is...', 100003); /* Alex has written a post about DBs */
-INSERT INTO Post (authorid, topicid, text, date) VALUES (3, 3, 'Pros and cons of staying in the EU?', 100005); /* Tom has written a post about the EU */
-INSERT INTO Post (authorid, topicid, text, date) VALUES (3, 4, 'Do people think Clinton will win?', 100004); /* Tom has written a post about the US elections */
-INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 5, 'Using SQLite by Jay A. Kreibich?', 100006); /* Alex has written a post about favourite books */
-INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 6, 'Blood Meridian by Cormac McCarthy', 100007); /* Alex has written a post about favourite books */
-INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 1, 'CWK3 answers?', 100008); /* Alex has written a post about DBs */
-INSERT INTO Post (authorid, topicid, text, date) VALUES (1, 2, 'Need help with time complexity analysis.', 100009); /* Alex has written a post about Algorithms */
+INSERT INTO Post (authorid, topicid, text) VALUES (2, 2, 'Quicksort is amazing!'); /* Joseph has written a post about algorithms */
+INSERT INTO Post (authorid, topicid, text) VALUES (1, 1, '1st NF is...'); /* Alex has written a post about DBs */
+INSERT INTO Post (authorid, topicid, text) VALUES (1, 1, '2nd NF is...'); /* Alex has written a post about DBs */
+INSERT INTO Post (authorid, topicid, text) VALUES (1, 1, '3rd NF is...'); /* Alex has written a post about DBs */
+INSERT INTO Post (authorid, topicid, text) VALUES (3, 3, 'Pros and cons of staying in the EU?'); /* Tom has written a post about the EU */
+INSERT INTO Post (authorid, topicid, text) VALUES (3, 4, 'Do people think Clinton will win?'); /* Tom has written a post about the US elections */
+INSERT INTO Post (authorid, topicid, text) VALUES (1, 5, 'Using SQLite by Jay A. Kreibich?'); /* Alex has written a post about favourite books */
+INSERT INTO Post (authorid, topicid, text) VALUES (1, 6, 'Blood Meridian by Cormac McCarthy'); /* Alex has written a post about favourite books */
+INSERT INTO Post (authorid, topicid, text) VALUES (1, 1, 'CWK3 answers?'); /* Alex has written a post about DBs */
+INSERT INTO Post (authorid, topicid, text) VALUES (1, 2, 'Need help with time complexity analysis.'); /* Alex has written a post about Algorithms */
 
 CREATE TABLE Post_Likers (
    postid INTEGER NOT NULL,
