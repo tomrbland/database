@@ -60,21 +60,21 @@ CREATE TABLE Post (
    authorid INTEGER NOT NULL,
    topicid INTEGER NOT NULL,
    text TEXT NOT NULL,
-   postedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   postedAt INTEGER NOT NULL,
    CONSTRAINT authorid_fk FOREIGN KEY (authorid) REFERENCES Person (id),
    CONSTRAINT topicid_fk FOREIGN KEY (topicid) REFERENCES Topic (id)
 );
 
-INSERT INTO Post (authorid, topicid, text) VALUES (2, 2, 'Quicksort is amazing!'); /* Joseph has written a post about algorithms */
-INSERT INTO Post (authorid, topicid, text) VALUES (1, 1, '1st NF is...'); /* Alex has written a post about DBs */
-INSERT INTO Post (authorid, topicid, text) VALUES (1, 1, '2nd NF is...'); /* Alex has written a post about DBs */
-INSERT INTO Post (authorid, topicid, text) VALUES (1, 1, '3rd NF is...'); /* Alex has written a post about DBs */
-INSERT INTO Post (authorid, topicid, text) VALUES (3, 3, 'Pros and cons of staying in the EU?'); /* Tom has written a post about the EU */
-INSERT INTO Post (authorid, topicid, text) VALUES (3, 4, 'Do people think Clinton will win?'); /* Tom has written a post about the US elections */
-INSERT INTO Post (authorid, topicid, text) VALUES (1, 5, 'Using SQLite by Jay A. Kreibich?'); /* Alex has written a post about favourite books */
-INSERT INTO Post (authorid, topicid, text) VALUES (1, 6, 'Blood Meridian by Cormac McCarthy'); /* Alex has written a post about favourite books */
-INSERT INTO Post (authorid, topicid, text) VALUES (1, 1, 'CWK3 answers?'); /* Alex has written a post about DBs */
-INSERT INTO Post (authorid, topicid, text) VALUES (1, 2, 'Need help with time complexity analysis.'); /* Alex has written a post about Algorithms */
+INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (2, 2, 'Quicksort is amazing!', strftime( '%s', 'now')); /* Joseph has written a post about algorithms */
+INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (1, 1, '1st NF is...', strftime( '%s', 'now')); /* Alex has written a post about DBs */
+INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (1, 1, '2nd NF is...', strftime( '%s', 'now')); /* Alex has written a post about DBs */
+INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (1, 1, '3rd NF is...', strftime( '%s', 'now')); /* Alex has written a post about DBs */
+INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (3, 3, 'Pros and cons of staying in the EU?', strftime( '%s', 'now')); /* Tom has written a post about the EU */
+INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (3, 4, 'Do people think Clinton will win?', strftime( '%s', 'now')); /* Tom has written a post about the US elections */
+INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (1, 5, 'Using SQLite by Jay A. Kreibich?', strftime( '%s', 'now')); /* Alex has written a post about favourite books */
+INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (1, 6, 'Blood Meridian by Cormac McCarthy', strftime( '%s', 'now')); /* Alex has written a post about favourite books */
+INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (1, 1, 'CWK3 answers?', strftime( '%s', 'now')); /* Alex has written a post about DBs */
+INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (1, 2, 'Need help with time complexity analysis.', strftime( '%s', 'now')); /* Alex has written a post about Algorithms */
 
 CREATE TABLE Post_Likers (
    postid INTEGER NOT NULL,
