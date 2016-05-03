@@ -32,12 +32,12 @@ CREATE TABLE Topic (
    CONSTRAINT forumid_fk FOREIGN KEY (forumid) REFERENCES Forum (id)
 );
 
-INSERT INTO Topic (forumid, title) VALUES (1, 'Database design'); /* Computer Science forum */
-INSERT INTO Topic (forumid, title) VALUES (1, 'Algorithms'); /* Computer Science forum */
-INSERT INTO Topic (forumid, title) VALUES (2, 'The EU'); /* Politics forum */
-INSERT INTO Topic (forumid, title) VALUES (2, 'The US elections'); /* Politics forum */
-INSERT INTO Topic (forumid, title) VALUES (3, 'What is your favourite book?'); /* Literature forum */
-INSERT INTO Topic (forumid, title) VALUES (3, 'The greatest novel of the 20th Century?'); /* Literature forum */
+INSERT INTO Topic (forumid, title) VALUES (1, 'Database design'); -- Computer Science forum
+INSERT INTO Topic (forumid, title) VALUES (1, 'Algorithms'); -- Computer Science forum
+INSERT INTO Topic (forumid, title) VALUES (2, 'The EU'); -- Politics forum
+INSERT INTO Topic (forumid, title) VALUES (2, 'The US elections'); -- Politics forum
+INSERT INTO Topic (forumid, title) VALUES (3, 'What is your favourite book?'); -- Literature forum
+INSERT INTO Topic (forumid, title) VALUES (3, 'The greatest novel of the 20th Century?'); -- Literature forum
 
 CREATE TABLE Topic_Likers (
    topicid INTEGER NOT NULL,
@@ -47,12 +47,12 @@ CREATE TABLE Topic_Likers (
    CONSTRAINT person_fk FOREIGN KEY(personid) REFERENCES Person (id)
 );
 
-INSERT INTO Topic_Likers (topicid, personid) VALUES (1, 1); /* Alex likes Topic 1 - Database design */
-INSERT INTO Topic_Likers (topicid, personid) VALUES (1, 2); /* Alex likes Topic 2 - The EU */
-INSERT INTO Topic_Likers (topicid, personid) VALUES (2, 3); /* Joseph likes Topic 3 - The EU */
-INSERT INTO Topic_Likers (topicid, personid) VALUES (2, 4); /* Joseph likes Topic 4 - The US elections */
-INSERT INTO Topic_Likers (topicid, personid) VALUES (3, 5); /* Tom likes Topic 5 - What is your favourite book? */
-INSERT INTO Topic_Likers (topicid, personid) VALUES (3, 6); /* Tom likes Topic 6 - The greatest novel of the 20th Century? */
+INSERT INTO Topic_Likers (topicid, personid) VALUES (1, 1); -- Alex likes Topic 1 - Database design
+INSERT INTO Topic_Likers (topicid, personid) VALUES (1, 2); -- Alex likes Topic 2 - The EU
+INSERT INTO Topic_Likers (topicid, personid) VALUES (2, 3); -- Joseph likes Topic 3 - The EU
+INSERT INTO Topic_Likers (topicid, personid) VALUES (2, 4); -- Joseph likes Topic 4 - The US elections
+INSERT INTO Topic_Likers (topicid, personid) VALUES (3, 5); -- Tom likes Topic 5 - What is your favourite book?
+INSERT INTO Topic_Likers (topicid, personid) VALUES (3, 6); -- Tom likes Topic 6 - The greatest novel of the 20th Century?
 
 
 CREATE TABLE Post (
@@ -65,16 +65,16 @@ CREATE TABLE Post (
    CONSTRAINT topicid_fk FOREIGN KEY (topicid) REFERENCES Topic (id)
 );
 
-INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (2, 2, 'Quicksort is amazing!', strftime( '%s', 'now')); /* Joseph has written a post about algorithms */
-INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (1, 1, '1st NF is...', strftime( '%s', 'now')); /* Alex has written a post about DBs */
-INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (1, 1, '2nd NF is...', strftime( '%s', 'now')); /* Alex has written a post about DBs */
-INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (1, 1, '3rd NF is...', strftime( '%s', 'now')); /* Alex has written a post about DBs */
-INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (3, 3, 'Pros and cons of staying in the EU?', strftime( '%s', 'now')); /* Tom has written a post about the EU */
-INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (3, 4, 'Do people think Clinton will win?', strftime( '%s', 'now')); /* Tom has written a post about the US elections */
-INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (1, 5, 'Using SQLite by Jay A. Kreibich?', strftime( '%s', 'now')); /* Alex has written a post about favourite books */
-INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (1, 6, 'Blood Meridian by Cormac McCarthy', strftime( '%s', 'now')); /* Alex has written a post about favourite books */
-INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (1, 1, 'CWK3 answers?', strftime( '%s', 'now')); /* Alex has written a post about DBs */
-INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (1, 2, 'Need help with time complexity analysis.', strftime( '%s', 'now')); /* Alex has written a post about Algorithms */
+INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (2, 2, 'Quicksort is amazing!', strftime( '%s', 'now')); -- Joseph has written a post about algorithms
+INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (1, 1, '1st NF is...', strftime( '%s', 'now')); -- Alex has written a post about DBs
+INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (1, 1, '2nd NF is...', strftime( '%s', 'now')); -- Alex has written a post about DBs
+INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (1, 1, '3rd NF is...', strftime( '%s', 'now')); -- Alex has written a post about DBs
+INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (3, 3, 'Pros and cons of staying in the EU?', strftime( '%s', 'now')); -- Tom has written a post about the EU
+INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (3, 4, 'Do people think Clinton will win?', strftime( '%s', 'now')); -- Tom has written a post about the US elections
+INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (1, 5, 'Using SQLite by Jay A. Kreibich?', strftime( '%s', 'now')); -- Alex has written a post about favourite books
+INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (1, 6, 'Blood Meridian by Cormac McCarthy', strftime( '%s', 'now')); -- Alex has written a post about favourite books
+INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (1, 1, 'CWK3 answers?', strftime( '%s', 'now')); -- Alex has written a post about DBs
+INSERT INTO Post (authorid, topicid, text, postedAt) VALUES (1, 2, 'Need help with time complexity analysis.', strftime( '%s', 'now')); -- Alex has written a post about Algorithms
 
 CREATE TABLE Post_Likers (
    postid INTEGER NOT NULL,
@@ -84,13 +84,13 @@ CREATE TABLE Post_Likers (
    CONSTRAINT person_fk FOREIGN KEY(personid) REFERENCES Person (id)
 );
 
-INSERT INTO Post_Likers (postid, personid) VALUES (1, 1); /* Alex likes Post 1 - 1st NF... */
-INSERT INTO Post_Likers (postid, personid) VALUES (2, 2); /* Joseph likes Post 2 - 2nd NF... */
-INSERT INTO Post_Likers (postid, personid) VALUES (3, 3); /* Tom likes Post 3 - 3rd NF... */
+INSERT INTO Post_Likers (postid, personid) VALUES (1, 1); -- Alex likes Post 1 - 1st NF...
+INSERT INTO Post_Likers (postid, personid) VALUES (2, 2); -- Joseph likes Post 2 - 2nd NF...
+INSERT INTO Post_Likers (postid, personid) VALUES (3, 3); -- Tom likes Post 3 - 3rd NF...
 
 SELECT * FROM Person LIMIT 6;
 SELECT * FROM Forum LIMIT 6;
 SELECT * FROM Topic LIMIT 6;
 SELECT * FROM Topic_Likers LIMIT 6;
-SELECT * FROM Post/* LIMIT 8 */;
+SELECT * FROM Post;
 SELECT * FROM Post_Likers LIMIT 6;
