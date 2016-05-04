@@ -85,8 +85,12 @@ CREATE TABLE Post_Likers (
 );
 
 INSERT INTO Post_Likers (postid, personid) VALUES (1, 1); -- Alex likes Post 1 - 1st NF...
+INSERT INTO Post_Likers (postid, personid) VALUES (1, 3); -- Alex likes Post 1 - 3rd NF..
 INSERT INTO Post_Likers (postid, personid) VALUES (2, 2); -- Joseph likes Post 2 - 2nd NF...
+INSERT INTO Post_Likers (postid, personid) VALUES (2, 6); -- Joseph likes Post 6 - Will Clinton win?
 INSERT INTO Post_Likers (postid, personid) VALUES (3, 3); -- Tom likes Post 3 - 3rd NF...
+INSERT INTO Post_Likers (postid, personid) VALUES (3, 6); -- Tom likes Post 6 - Will Clinton win?
+
 
 SELECT * FROM Person LIMIT 6;
 SELECT * FROM Forum LIMIT 6;
