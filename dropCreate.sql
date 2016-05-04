@@ -24,6 +24,7 @@ CREATE TABLE Forum (
 INSERT INTO Forum (title) VALUES ('Computer Science');
 INSERT INTO Forum (title) VALUES ('Politics');
 INSERT INTO Forum (title) VALUES ('Literature');
+INSERT INTO Forum (title) VALUES ('Procrastination'); -- Left outer join test
 
 CREATE TABLE Topic (
    id INTEGER PRIMARY KEY,
@@ -38,6 +39,7 @@ INSERT INTO Topic (forumid, title) VALUES (2, 'The EU'); -- Politics forum
 INSERT INTO Topic (forumid, title) VALUES (2, 'The US elections'); -- Politics forum
 INSERT INTO Topic (forumid, title) VALUES (3, 'What is your favourite book?'); -- Literature forum
 INSERT INTO Topic (forumid, title) VALUES (3, 'The greatest novel of the 20th Century?'); -- Literature forum
+INSERT INTO Topic (forumid, title) VALUES (2, 'THE EUSSR'); -- Left outer join test
 
 CREATE TABLE Topic_Likers (
    topicid INTEGER NOT NULL,
@@ -48,11 +50,11 @@ CREATE TABLE Topic_Likers (
 );
 
 INSERT INTO Topic_Likers (topicid, personid) VALUES (1, 1); -- Alex likes Topic 1 - Database design
-INSERT INTO Topic_Likers (topicid, personid) VALUES (1, 2); -- Alex likes Topic 2 - The EU
-INSERT INTO Topic_Likers (topicid, personid) VALUES (2, 3); -- Joseph likes Topic 3 - The EU
-INSERT INTO Topic_Likers (topicid, personid) VALUES (2, 4); -- Joseph likes Topic 4 - The US elections
-INSERT INTO Topic_Likers (topicid, personid) VALUES (3, 5); -- Tom likes Topic 5 - What is your favourite book?
-INSERT INTO Topic_Likers (topicid, personid) VALUES (3, 6); -- Tom likes Topic 6 - The greatest novel of the 20th Century?
+INSERT INTO Topic_Likers (topicid, personid) VALUES (2, 1); -- Alex likes Topic 2 - The EU
+INSERT INTO Topic_Likers (topicid, personid) VALUES (3, 2); -- Joseph likes Topic 3 - The EU
+INSERT INTO Topic_Likers (topicid, personid) VALUES (4, 2); -- Joseph likes Topic 4 - The US elections
+INSERT INTO Topic_Likers (topicid, personid) VALUES (5, 3); -- Tom likes Topic 5 - What is your favourite book?
+INSERT INTO Topic_Likers (topicid, personid) VALUES (6, 3); -- Tom likes Topic 6 - The greatest novel of the 20th Century?
 
 
 CREATE TABLE Post (
