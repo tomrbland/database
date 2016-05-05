@@ -46,7 +46,7 @@ CREATE TABLE Topic_Likers (
    personid INTEGER NOT NULL,
    PRIMARY KEY(topicid, personid),
    CONSTRAINT topic_fk FOREIGN KEY (topicid) REFERENCES Topic (id),
-   CONSTRAINT person_fk FOREIGN KEY(personid) REFERENCES Person (id)
+   CONSTRAINT person_fk FOREIGN KEY(personid) REFERENCES Person (id) ON DELETE CASCADE
 );
 
 INSERT INTO Topic_Likers (topicid, personid) VALUES (1, 1); -- Alex likes Topic 1 - Database design
@@ -63,7 +63,7 @@ CREATE TABLE Post (
    topicid INTEGER NOT NULL,
    text TEXT NOT NULL,
    postedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-   CONSTRAINT authorid_fk FOREIGN KEY (authorid) REFERENCES Person (id),
+   CONSTRAINT authorid_fk FOREIGN KEY (authorid) REFERENCES Person (id) ON DELETE CASCADE,
    CONSTRAINT topicid_fk FOREIGN KEY (topicid) REFERENCES Topic (id)
 );
 
@@ -83,7 +83,7 @@ CREATE TABLE Post_Likers (
    personid INTEGER NOT NULL,
    PRIMARY KEY(postid, personid),
    CONSTRAINT post_fk FOREIGN KEY (postid) REFERENCES Post (id),
-   CONSTRAINT person_fk FOREIGN KEY(personid) REFERENCES Person (id)
+   CONSTRAINT person_fk FOREIGN KEY(personid) REFERENCES Person (id) ON DELETE CASCADE
 );
 
 INSERT INTO Post_Likers (postid, personid) VALUES (1, 1); -- Alex likes Post 1 - 1st NF...
