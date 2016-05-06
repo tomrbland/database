@@ -77,6 +77,7 @@ INSERT INTO Post (authorid, topicid, text) VALUES (1, 5, 'Using SQLite by Jay A.
 INSERT INTO Post (authorid, topicid, text) VALUES (1, 6, 'Blood Meridian by Cormac McCarthy'); -- Alex has written a post about favourite books
 INSERT INTO Post (authorid, topicid, text) VALUES (1, 1, 'CWK3 answers?'); /* Alex has written a post about DBs */
 INSERT INTO Post (authorid, topicid, text) VALUES (1, 2, 'Need help with time complexity analysis.'); -- Alex has written a post about Algorithms
+INSERT INTO Post (authorid, topicid, text) VALUES (3, 4, 'Working?'); -- New post
 
 CREATE TABLE Post_Likers (
    postid INTEGER NOT NULL,
@@ -86,12 +87,28 @@ CREATE TABLE Post_Likers (
    CONSTRAINT person_fk FOREIGN KEY(personid) REFERENCES Person (id)
 );
 
+-- Most of the comments are wrong, because postid starts from 1, not 0
 INSERT INTO Post_Likers (postid, personid) VALUES (1, 1); -- Alex likes Post 1 - 1st NF...
-INSERT INTO Post_Likers (postid, personid) VALUES (1, 3); -- Alex likes Post 1 - 3rd NF..
+INSERT INTO Post_Likers (postid, personid) VALUES (3, 1); -- Alex likes Post 4 - 3rd NF..
 INSERT INTO Post_Likers (postid, personid) VALUES (2, 2); -- Joseph likes Post 2 - 2nd NF...
-INSERT INTO Post_Likers (postid, personid) VALUES (2, 6); -- Joseph likes Post 6 - Will Clinton win?
+INSERT INTO Post_Likers (postid, personid) VALUES (6, 2); -- Joseph likes Post 6 - Will Clinton win?
 INSERT INTO Post_Likers (postid, personid) VALUES (3, 3); -- Tom likes Post 3 - 3rd NF...
-INSERT INTO Post_Likers (postid, personid) VALUES (3, 6); -- Tom likes Post 6 - Will Clinton win?
+INSERT INTO Post_Likers (postid, personid) VALUES (6, 3); -- Tom likes Post 6 - Will Clinton win?
+--INSERT INTO Post_Likers (postid, personid) VALUES (11, 2); -- Counting likes
+
+CREATE TABLE Topic_Fav (
+   topicid INTEGER NOT NULL,
+   personid INTEGER NOT NULL,
+   PRIMARY KEY(topicid, personid),
+   CONSTRAINT topic_fk FOREIGN KEY (topicid) REFERENCES Topic (id),
+   CONSTRAINT person_fk FOREIGN KEY(personid) REFERENCES Person (id)
+);
+
+INSERT INTO Topic_Fav (topicid, personid) VALUES (1, 1); -- Alex
+INSERT INTO Topic_Fav (topicid, personid) VALUES (3, 2); -- Joseph
+INSERT INTO Topic_Fav (topicid, personid) VALUES (4, 2); -- Joseph
+INSERT INTO Topic_Fav (topicid, personid) VALUES (5, 3); -- Tom
+INSERT INTO Topic_Fav (topicid, personid) VALUES (6, 3); -- Tom
 
 
 SELECT * FROM Person LIMIT 6;
@@ -100,3 +117,4 @@ SELECT * FROM Topic LIMIT 6;
 SELECT * FROM Topic_Likers LIMIT 6;
 SELECT * FROM Post;
 SELECT * FROM Post_Likers LIMIT 6;
+SELECT * FROM Topic_Fav LIMIT 6;
