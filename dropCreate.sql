@@ -14,7 +14,7 @@ stuId VARCHAR(10) NULL
 
 INSERT INTO Person (name, username, stuId) VALUES ('Alex', 'ak15308', '123450'); --test
 INSERT INTO Person (name, username, stuId) VALUES ('Joseph', 'jl15351', '123451'); --test again
-INSERT INTO Person (name, username, stuId) VALUES ('Tom', 'tb15269', '123452');
+INSERT INTO Person (name, username, stuId) VALUES ('Tom', 'tb15269', '123452'); -- test again 
 
 CREATE TABLE Forum (
    id INTEGER PRIMARY KEY,
